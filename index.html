@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxura Hotel</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .notice {
+      background-color: #ffeb3b;
+      color: #333;
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #555;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #777;
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero {
+      background-color: #eaeaea;
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Luxura Hotel</h1>
+    <div class="notice">
+      <p><strong>Note:</strong> This website is for testing the chatbot functionality. It does not represent a real hotel booking platform.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#rooms">Rooms</a>
+  </nav>
+
+  <section id="about">
+    <div class="hero">
+      <h2>Welcome to Luxura Hotel</h2>
+      <p>Your perfect getaway awaits. Experience comfort and luxury at an affordable price.</p>
+    </div>
+  </section>
+
+  <section id="rooms">
+    <h2>Our Rooms</h2>
+    <p>Discover our range of cozy and luxurious rooms designed to make your stay memorable.</p>
+  </section>
+  <section id="chatbot">
+    <h2>Chat with Us</h2>
+    <p>Ask anything about Luxura Hotel:</p>
+    <div id="chatbot-container"></div>
+  </section>
+  <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "6044ba43-8929-45b9-ad15-31182fc5d4ab",
+        apiHost: "http://localhost:3000",
+        chatflowConfig: {
+            /* Chatflow Config */
+        },
+        observersConfig: {
+            /* Observers Config */
+        },
+        theme: {
+            button: {
+                backgroundColor: '#777',
+                right: 20,
+                bottom: 70,
+                size: 48,
+                dragAndDrop: true,
+                iconColor: 'white',
+                customIconSrc: 'mail_3373249.png',
+                autoWindowOpen: {
+                    autoOpen: true,
+                    openDelay: 2,
+                    autoOpenOnMobile: false
+                }
+            },
+            tooltip: {
+                showTooltip: true,
+                tooltipMessage: 'Hi There 👋!',
+                tooltipBackgroundColor: '#777',
+                tooltipTextColor: 'white',
+                tooltipFontSize: 16
+            },
+            disclaimer: {
+                title: 'Disclaimer',
+                message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
+                textColor: 'black',
+                buttonColor: '#333',
+                buttonText: 'Start Chatting',
+                buttonTextColor: 'white',
+                blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
+                backgroundColor: 'white'
+            },
+            customCSS: ``,
+            chatWindow: {
+                showTitle: true,
+                showAgentMessages: true,
+                title: 'Luxura Hotel Assistant',
+                titleAvatarSrc: 'mail_3373249.png',
+                welcomeMessage: 'Hello! How can I assist you today?',
+                errorMessage: 'Oh No! Something went wrong.',
+                backgroundColor: '#ffffff',
+          //      backgroundImage: '5581931_3636.jpg',
+                height: 600,
+                width: 400,
+                fontSize: 16,
+                // starterPrompts: [
+                //     "What is a bot?",
+                //     "Who are you?"
+                // ],
+                starterPromptFontSize: 15,
+                clearChatOnReload: false,
+                sourceDocsTitle: 'Sources:',
+                renderHTML: true,
+                botMessage: {
+                    backgroundColor: '#f7f8ff',
+                    textColor: '#303235',
+                    showAvatar: true,
+                    avatarSrc: 'mic_5961096.png'
+                },
+                userMessage: {
+                    backgroundColor: '#333',
+                    textColor: '#ffffff',
+                    //showAvatar: true,
+                    avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
+                },
+                textInput: {
+                    placeholder: 'Type your question',
+                    backgroundColor: '#ffffff',
+                    textColor: '#303235',
+                    sendButtonColor: '#333',
+                    maxChars: 50,
+                    maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
+                    autoFocus: true,
+                    sendMessageSound: true,
+                    sendSoundLocation: 'send_message.mp3',
+                    receiveMessageSound: true,
+                    receiveSoundLocation: 'receive_message.mp3'
+                },
+                feedback: {
+                    color: '#303235'
+                },
+                dateTimeToggle: {
+                    date: true,
+                    time: true
+                },
+                footer: {
+                    textColor: '#fff',
+                    text: 'Powered by',
+                    company: 'Flowise',
+                    companyLink: 'https://flowiseai.com'
+                }
+            }
+        }
+    })
+</script>
+
+<footer>
+    <p>&copy; 2025 Luxura Hotel. All rights reserved.</p>
+  </footer>
+</body>
+</html>
