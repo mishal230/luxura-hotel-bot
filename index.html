@@ -115,11 +115,18 @@
     <p>Ask anything about Luxura Hotel:</p>
     <div id="chatbot-container"></div>
   </section>
-  <script type="module">
+  <!-- <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
         chatflowid: "a832499b-f796-4057-9e70-0d42a6463159",
-        apiHost: "https://mishal23-hotel-backend.hf.space",
+        apiHost: "https://mishal23-hotel-backend.hf.space", -->
+        <script type="module">
+          import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+          Chatbot.init({
+              chatflowid: "4ce30fc3-e194-4c5d-8d9d-e1a85ab76838",
+              apiHost: "https://mishal23-hotel-backend.hf.space",
+          
+    
         chatflowConfig: {
             /* Chatflow Config */
         },
@@ -165,7 +172,7 @@
                 title: 'Luxura Hotel Assistant',
             //    titleAvatarSrc: 'mail_3373249.png',
                 welcomeMessage: 'Hello! How can I assist you today?',
-                errorMessage: "I'm sorry, I couldn't find an answer to your question. Could you try rephrasing it",
+                errorMessage: 'Oh No! Something went wrong.',
                 backgroundColor: '#ffffff',
           //      backgroundImage: '5581931_3636.jpg',
                 height: 600,
